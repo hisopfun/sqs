@@ -449,7 +449,7 @@ public class MatchServer {
 
         //Send multiple messages to the queue
         SendMessageRequest send_msg_request = new SendMessageRequest()
-                .withQueueUrl("https://sqs.us-east-1.amazonaws.com/912791518131/bidq")
+                .withQueueUrl("https://sqs.ap-northeast-1.amazonaws.com/912791518131/sqs-trade")
                 .withMessageBody(msg);
         sqs.sendMessage(send_msg_request);
 
@@ -461,7 +461,7 @@ public class MatchServer {
         AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
 
         // receive messages from the queue
-         String queueUrl = "https://sqs.us-east-1.amazonaws.com/912791518131/bidq";
+         String queueUrl = "https://sqs.ap-northeast-1.amazonaws.com/912791518131/sqs-trade";
         List<Message> messages = sqs.receiveMessage(queueUrl).getMessages();
 
 
