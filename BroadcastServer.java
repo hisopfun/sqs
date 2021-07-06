@@ -218,7 +218,7 @@ public class BroadcastServer {
 
         //Send multiple messages to the queue
         SendMessageRequest send_msg_request = new SendMessageRequest()
-                .withQueueUrl("https://sqs.ap-northeast-1.amazonaws.com/912791518131/sqs-trade")
+                .withQueueUrl("https://sqs.ap-northeast-1.amazonaws.com/912791518131/trade")
                 .withMessageBody(msg);
         sqs.sendMessage(send_msg_request);
 
@@ -246,7 +246,7 @@ public class BroadcastServer {
             AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
 
             // receive messages from the queue
-            String queueUrl = "https://sqs.ap-northeast-1.amazonaws.com/912791518131/sqs-trade";
+            String queueUrl = "https://sqs.ap-northeast-1.amazonaws.com/912791518131/trade";
             List<Message> messages = null;
 
             while(true){
